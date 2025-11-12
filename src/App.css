@@ -486,7 +486,7 @@ body {
 }
 
 .bill-card {
-    background: rgb(214, 200, 220);
+    background: white;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     padding: 32px;
@@ -518,12 +518,19 @@ body {
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
-.shop-name {
+/* Fix for Kannada text in download mode - IMPORTANT */
+.download-mode .shop-name {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    padding: 0 8px !important;
+    word-break: break-word !important;
+}
 
-    font-weight: 900;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    color: whitesmoke;
+.download-mode .footer-shop-name {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    padding: 0 8px !important;
+    word-break: break-word !important;
 }
 
 .card-number-display {
@@ -1276,101 +1283,413 @@ input:checked + .slider:before {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - MOBILE FIRST!
    ============================================ */
+
+/* Mobile First - Base styles for mobile */
 @media (max-width: 991px) {
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .app-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
     .bill-preview-section {
         position: static;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .page-title {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .database-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
-    .bill-card {
-        padding: 24px;
-    }
-
-    .shop-name,
-    .footer-shop-name {
-        font-size: 24px;
-    }
-
-    .card-number-display {
-        font-size: 20px;
-    }
-
-    .stat-value {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 575px) {
-    .app-container,
-    .database-container {
-        padding: 10px;
+    .modern-card {
+        margin-bottom: 15px;
     }
 
     .modern-card .card-body {
-        padding: 16px;
+        padding: 15px !important;
+    }
+
+    /* Form sections mobile */
+    .form-sections {
+        gap: 15px;
     }
 
     .form-card {
-        padding: 16px;
+        padding: 15px;
     }
 
-    .page-title {
-        font-size: 1.4rem;
+    .form-label-modern {
+        font-size: 0.9rem;
     }
 
+    .input-modern {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Items section mobile */
+    .items-section {
+        padding: 15px;
+    }
+
+    .item-row {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    .item-input {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    /* Total cards mobile */
+    .total-card {
+        padding: 10px;
+    }
+
+    .total-label {
+        font-size: 0.65rem;
+    }
+
+    .total-value {
+        font-size: 1.3rem;
+    }
+
+    .advance-input {
+        font-size: 1rem;
+        padding: 4px;
+    }
+
+    /* Action buttons mobile */
     .action-btn {
         padding: 12px 8px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        gap: 4px;
     }
 
+    .action-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .action-btn span {
+        font-size: 0.75rem;
+    }
+
+    /* Bill card mobile */
     .bill-card {
-        padding: 20px;
+        padding: 15px;
+        max-width: 100%;
     }
 
-    .shop-name,
-    .footer-shop-name {
+    .bill-warning {
+        font-size: 9px;
+        padding: 6px;
+    }
+
+    .bill-header {
+        padding: 15px;
+    }
+
+    .shop-name {
         font-size: 20px;
     }
 
     .card-number-display {
         font-size: 18px;
+        padding: 8px;
     }
 
     .customer-name-display {
         font-size: 16px;
     }
 
-    .stat-value {
-        font-size: 1.8rem;
+    .phone-display,
+    .date-display {
+        font-size: 14px;
     }
 
-    .customer-name {
-        font-size: 1.3rem;
+    .ready-date-display {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .bill-table th {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+
+    .bill-table td {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    .bill-summary {
+        padding: 12px;
+    }
+
+    .summary-row {
+        font-size: 15px;
+    }
+
+    .balance-row {
+        font-size: 18px;
+    }
+
+    .bill-footer {
+        padding: 15px;
+    }
+
+    .footer-shop-name {
+        font-size: 20px;
+    }
+
+    .footer-tagline,
+    .footer-address {
+        font-size: 11px;
+    }
+
+    .footer-phone {
+        font-size: 13px;
     }
 
     .preview-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
 
-    .modern-btn,
-    .action-btn,
-    button {
-        min-height: 44px;
-        min-width: 44px;
+    /* Database mobile */
+    .database-container {
+        padding: 10px;
+    }
+
+    .database-header-card .card-body {
+        padding: 15px !important;
+    }
+
+    .stat-card {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        font-size: 0.9rem;
+        padding: 10px 10px 10px 45px;
+    }
+
+    .customer-card {
+        margin-bottom: 15px;
+    }
+
+    .customer-header {
+        padding: 15px !important;
+    }
+
+    .customer-name {
+        font-size: 1.2rem;
+    }
+
+    .customer-phone {
+        font-size: 0.95rem;
+    }
+
+    .customer-meta {
+        font-size: 0.8rem;
+    }
+
+    .badge-modern {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+
+    .orders-section {
+        padding: 15px !important;
+    }
+
+    .orders-title {
+        font-size: 1.1rem;
+    }
+
+    .order-card {
+        margin-bottom: 10px;
+    }
+
+    .order-card-header {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .order-card .card-body {
+        padding: 10px !important;
+    }
+
+    .order-dates,
+    .order-amounts,
+    .order-items {
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
+    .items-label {
+        font-size: 0.8rem;
+    }
+
+    .measurement-thumb {
+        width: 32px;
+        height: 32px;
+    }
+
+    .toggle-switch {
+        width: 45px;
+        height: 24px;
+    }
+
+    .toggle-switch .slider:before {
+        height: 18px;
+        width: 18px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(21px);
+    }
+
+    .btn-delete-order {
+        padding: 5px 8px;
+    }
+
+    .filter-header {
+        padding: 12px 15px;
     }
 
     .filter-header h3 {
+        font-size: 1rem;
+    }
+
+    /* Scroll to top button mobile */
+    .scroll-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    /* Modern buttons mobile */
+    .modern-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .btn-database,
+    .btn-home {
+        padding: 8px 12px;
+    }
+
+    .btn-database svg,
+    .btn-home svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 575px) {
+    .app-container,
+    .database-container {
+        padding: 8px;
+    }
+
+    .page-title {
         font-size: 1.1rem;
+    }
+
+    .modern-card .card-body {
+        padding: 12px !important;
+    }
+
+    .form-card {
+        padding: 12px;
+    }
+
+    .action-btn {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+
+    .bill-card {
+        padding: 12px;
+    }
+
+    .shop-name {
+        font-size: 18px;
+    }
+
+    .footer-shop-name {
+        font-size: 18px;
+    }
+
+    .card-number-display {
+        font-size: 16px;
+    }
+
+    .customer-name-display {
+        font-size: 14px;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .customer-name {
+        font-size: 1rem;
+    }
+
+    .preview-title {
+        font-size: 1rem;
+    }
+
+    /* Make buttons full width on very small screens */
+    .modern-btn,
+    .action-btn {
+        min-height: 44px;
+    }
+
+    .filter-header h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Stack stats vertically on very small screens */
+    .database-header-card .row.g-3 {
+        gap: 8px !important;
+    }
+}
+
+/* Landscape phone */
+@media (max-width: 767px) and (orientation: landscape) {
+    .bill-preview-section {
+        margin-top: 15px;
+    }
+
+    .preview-title {
+        margin-bottom: 10px;
     }
 }
 
