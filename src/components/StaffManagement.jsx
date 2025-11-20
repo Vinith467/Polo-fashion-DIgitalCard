@@ -300,6 +300,7 @@ function StaffManagement({ onBack }) {
                                 className="modern-btn btn-home"
                                 onClick={onBack}
                             >
+                                <Home size={24} className="me-2" />
                             </Button>
                         </div>
                     </div>
