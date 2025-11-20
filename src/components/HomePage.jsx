@@ -7,7 +7,7 @@ import { uploadToCloudinary, compressImage } from '../services/cloudinary';
 import { Download, Share2, MessageSquare, Plus, Trash2, Users, Clock, Cloud } from './Icons';
 import LoadingOverlay from './LoadingOverlay';
 
-function HomePage({ onOpenDatabase, customers, setCustomers, orders, setOrders }) {
+function HomePage({ customers, setCustomers, orders, setOrders }) {
     const [cardNumber, setCardNumber] = useState('');
     const [customerName, setCustomerName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -267,14 +267,7 @@ function HomePage({ onOpenDatabase, customers, setCustomers, orders, setOrders }
                                 <h1 className="page-title d-flex align-items-center gap-2 mb-0">
                                      Polo Fashions
                                 </h1>
-                                <Button 
-                                    variant="primary" 
-                                    className="modern-btn btn-database"
-                                    onClick={onOpenDatabase}
-                                >
-                                    <Users size={20} className="me-2" />
-                                    Database
-                                </Button>
+                                
                             </div>
 
                             <div className="form-sections">

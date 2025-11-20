@@ -2085,5 +2085,35 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
 }
+/* Navbar styles */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: white !important;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    font-weight: 700;
+    color: white !important;
+}
+
+/* Staff table responsive */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .table-responsive table {
+        font-size: 0.85rem;
+    }
+}
+#management-dropdown{
+    background-color: #230342;
+    border-radius:var(--radius-lg);
+}
+
 
 /* END OF CSS - COMPLETE VERSION */
