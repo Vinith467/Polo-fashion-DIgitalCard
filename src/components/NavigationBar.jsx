@@ -24,6 +24,7 @@ function NavigationBar({ currentPage, onNavigate }) {
           style={{
             fontSize: "1.5rem",
             fontWeight: "800",
+             height:"75px",
             cursor: "pointer",
             display: 'flex',
             alignItems: 'center',
@@ -34,7 +35,7 @@ function NavigationBar({ currentPage, onNavigate }) {
             <img
               src="/fav-icon.png"
               alt="Shop Icon"
-              style={{ width: "40px", height: "40px", borderRadius: '6px' }} 
+              style={{ width: "auto", height: "70px",objectFit:"contain"}} 
             />
           </div>
         </Navbar.Brand>
