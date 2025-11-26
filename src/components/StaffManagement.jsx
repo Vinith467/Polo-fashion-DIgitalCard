@@ -542,7 +542,6 @@ function StaffManagement({ onBack }) {
                     <th
                       style={{
                         minWidth: "120px",
-                        position: "sticky",
                         left: 0,
                         background: "inherit",
                         zIndex: 10,
@@ -592,7 +591,6 @@ function StaffManagement({ onBack }) {
                     <tr key={record.id}>
                       <td
                         style={{
-                          position: "sticky",
                           left: 0,
                           background: "white",
                           zIndex: 5,
@@ -717,7 +715,6 @@ function StaffManagement({ onBack }) {
                   <tr style={{ background: "#f7fafc", fontWeight: "bold" }}>
                     <td
                       style={{
-                        position: "sticky",
                         left: 0,
                         background: "#f7fafc",
                         zIndex: 5,
